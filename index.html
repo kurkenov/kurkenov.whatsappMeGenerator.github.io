@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background: black;
+        color: white;
+        font-size: 40px;
+
+        text-align: center;
+      }
+      .formWrapper {
+        margin: auto;
+        max-width: 370px;
+        margin-top: 200px;
+      }
+
+      #number {
+        font-size: 40px;
+        text-align: center;
+      }
+
+      #end_url {
+        color: green;
+      }
+
+      button {
+        font-size: 40px;
+        padding: 20px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="formWrapper">
+      <h3>Whatsapp link generator</h3>
+      <form name="formMain">
+        <label for="number">Phone number</label><br />
+        <input type="text" name="number" id="number" /><br />
+        <a id="end_url" href=""> </a> <br />
+        <button type="button" onclick="generateLink()">Create link!</button>
+      </form>
+    </div>
+    <script>
+      function generateLink() {
+        let number = document.formMain.number.value;
+        let url = "https://wa.me/";
+        let end_url = `${url}${number}`;
+        document.getElementById("end_url").innerText = end_url;
+        document.getElementById("end_url").href = end_url;
+      }
+    </script>
+  </body>
+</html>
